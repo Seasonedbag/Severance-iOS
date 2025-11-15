@@ -1,38 +1,45 @@
-// !$*UTF8*$!
+/* !$*UTF8*$! */
 {
   archiveVersion = 1;
   classes = {};
-  objectVersion = 55;
+  objectVersion = 52;
   objects = {
-// FILE REFERENCES
-    A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "AppDelegate.swift"; path = "AppDelegate.swift"; sourceTree = "<group>"; };
-    A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "SceneDelegate.swift"; path = "SceneDelegate.swift"; sourceTree = "<group>"; };
-    A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "ViewController.swift"; path = "ViewController.swift"; sourceTree = "<group>"; };
-    A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = "text.plist.xml"; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
-    A5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = "file.storyboard"; name = "LaunchScreen.storyboard"; path = "LaunchScreen.storyboard"; sourceTree = "<group>"; };
-    A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = "folder.assetcatalog"; name = "Assets.xcassets"; path = "Assets.xcassets"; sourceTree = "<group>"; };
-    A7 /* www */ = {isa = PBXFileReference; lastKnownFileType = "folder"; name = "www"; path = "www"; sourceTree = "<group>"; };
+/* Begin PBXFileReference section */
+    100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+    101 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+    102 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ViewController.swift; sourceTree = "<group>"; };
+    103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Info.plist; sourceTree = "<group>"; };
+    104 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+    105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets; sourceTree = "<group>"; };
+    106 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = www; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
-// GROUP
-    MAIN = { isa = PBXGroup; children = (A6, A4, A5, A1, A2, A3, A7); sourceTree = "<group>"; };
+/* Begin PBXGroup section */
+    1 /* Main Group */ = { isa = PBXGroup; children = (105,103,104,100,101,102,106); sourceTree = "<group>"; };
+/* End PBXGroup section */
 
-// SOURCES BUILD PHASE
-    S1 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (F1, F2, F3); };
+/* Begin PBXSourcesBuildPhase section */
+    10 /* Sources */ = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (200,201,202); };
+/* End PBXSourcesBuildPhase section */
 
-// BUILD FILES (for sources)
-    F1 = { isa = PBXBuildFile; fileRef = A1; };
-    F2 = { isa = PBXBuildFile; fileRef = A2; };
-    F3 = { isa = PBXBuildFile; fileRef = A3; };
+/* Begin PBXBuildFile section */
+    200 = { isa = PBXBuildFile; fileRef = 100; };
+    201 = { isa = PBXBuildFile; fileRef = 101; };
+    202 = { isa = PBXBuildFile; fileRef = 102; };
+/* End PBXBuildFile section */
 
-// TARGET
-    T1 = { isa = PBXNativeTarget; buildConfigurationList = BC_LIST; buildPhases = (S1,); name = "Severance"; productName = "Severance"; productType = "com.apple.product-type.application"; };
+/* Begin PBXNativeTarget section */
+    300 /* Severance */ = { isa = PBXNativeTarget; buildConfigurationList = 400; buildPhases = (10,); name = "Severance"; productName = "Severance"; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
 
-// BUILD CONFIG
-    BC = { isa = XCBuildConfiguration; name = Release; buildSettings = { PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance"; INFOPLIST_FILE = "Info.plist"; IPHONEOS_DEPLOYMENT_TARGET = "15.0"; SWIFT_VERSION = "5.0"; }; };
+/* Begin XCBuildConfiguration section */
+    401 = { isa = XCBuildConfiguration; name = Release; buildSettings = { PRODUCT_com.kevin.SeveranceENTIFIER = "com.kevin.Severance"; INFOPLIST_FILE = "Info.plist"; IPHONEOS_DEPLOYMENT_TARGET = "15.0"; SWIFT_VERSION = "5.0"; }; };
+/* End XCBuildConfiguration section */
 
-// CONFIG LIST
-    BC_LIST = { isa = XCConfigurationList; buildConfigurations = (BC,); defaultConfigurationName = Release; };
+/* Begin XCConfigurationList section */
+    400 = { isa = XCConfigurationList; buildConfigurations = (401,); defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
 
   };
-  rootObject = MAIN;
+  rootObject = 1;
 }
