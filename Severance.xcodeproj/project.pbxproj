@@ -1,7 +1,0 @@
-{
-    archiveVersion = 1;
-    classes = {};
-    objectVersion = 55;
-    objects = {};
-    rootObject = 1;
-}
