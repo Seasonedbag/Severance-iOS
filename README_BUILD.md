@@ -1,1 +1,1 @@
-Severance full Xcode project. Upload all files/folders in this package to the repo root.
+Severance final v5 project. Upload everything inside to GitHub root. Build via Actions.

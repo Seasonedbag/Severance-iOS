@@ -1,36 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-/* !$*UTF8*$! */
+// !$*UTF8*$!
 {
   archiveVersion = 1;
   classes = {};
   objectVersion = 55;
   objects = {
-    /* Begin PBXBuildFile section */
-    /* End PBXBuildFile section */
-    /* Begin PBXFileReference section */
-    1D6058900D05DD3D006BFB54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-    1D6058910D05DD3D006BFB54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-    1D6058920D05DD3D006BFB54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ViewController.swift; sourceTree = "<group>"; };
-    1D6058930D05DD3D006BFB54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Info.plist; sourceTree = "<group>"; };
-    1D6058940D05DD3D006BFB54 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-    1D6058950D05DD3D006BFB54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets; sourceTree = "<group>"; };
-    1D6058960D05DD3D006BFB54 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = www; sourceTree = "<group>"; };
-    /* End PBXFileReference section */
-    /* Begin PBXGroup section */
-    1C5B5D5D1D9F6B8D00E6A5B1 /* Main Group */ = {isa = PBXGroup; children = (1D6058950D05DD3D006BFB54,1D6058930D05DD3D006BFB54,1D6058900D05DD3D006BFB54,1D6058910D05DD3D006BFB54,1D6058920D05DD3D006BFB54,1D6058940D05DD3D006BFB54,1D6058960D05DD3D006BFB54); sourceTree = "<group>"; };
-    /* End PBXGroup section */
-    /* Begin PBXSourcesBuildPhase section */
-    1C5B5D5D1D9F6B8D00E6A5B2 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (1D6058900D05DD3D006BFB54,1D6058910D05DD3D006BFB54,1D6058920D05DD3D006BFB54); };
-    /* End PBXSourcesBuildPhase section */
-    /* Begin PBXNativeTarget section */
-    1C5B5D5D1D9F6B8D00E6A5B3 /* Severance */ = {isa = PBXNativeTarget; buildConfigurationList = 1C5B5D5D1D9F6B8D00E6A5B4; buildPhases = (1C5B5D5D1D9F6B8D00E6A5B2,); name = "Severance"; productName = "Severance"; productType = "com.apple.product-type.application"; };
-    /* End PBXNativeTarget section */
-    /* Begin XCBuildConfiguration section */
-    1C5B5D5D1D9F6B8D00E6A5B5 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance"; INFOPLIST_FILE = "Info.plist"; IPHONEOS_DEPLOYMENT_TARGET = "15.0"; SWIFT_VERSION = "5.0"; }; name = Release; };
-    /* End XCBuildConfiguration section */
-    /* Begin XCConfigurationList section */
-    1C5B5D5D1D9F6B8D00E6A5B4 /* Build configuration list for PBXNativeTarget "Severance" */ = {isa = XCConfigurationList; buildConfigurations = (1C5B5D5D1D9F6B8D00E6A5B5,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-    /* End XCConfigurationList section */
+// FILE REFERENCES
+    A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "AppDelegate.swift"; path = "AppDelegate.swift"; sourceTree = "<group>"; };
+    A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "SceneDelegate.swift"; path = "SceneDelegate.swift"; sourceTree = "<group>"; };
+    A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.swift"; name = "ViewController.swift"; path = "ViewController.swift"; sourceTree = "<group>"; };
+    A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = "text.plist.xml"; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+    A5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = "file.storyboard"; name = "LaunchScreen.storyboard"; path = "LaunchScreen.storyboard"; sourceTree = "<group>"; };
+    A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = "folder.assetcatalog"; name = "Assets.xcassets"; path = "Assets.xcassets"; sourceTree = "<group>"; };
+    A7 /* www */ = {isa = PBXFileReference; lastKnownFileType = "folder"; name = "www"; path = "www"; sourceTree = "<group>"; };
+
+// GROUP
+    MAIN = { isa = PBXGroup; children = (A6, A4, A5, A1, A2, A3, A7); sourceTree = "<group>"; };
+
+// SOURCES BUILD PHASE
+    S1 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (F1, F2, F3); };
+
+// BUILD FILES (for sources)
+    F1 = { isa = PBXBuildFile; fileRef = A1; };
+    F2 = { isa = PBXBuildFile; fileRef = A2; };
+    F3 = { isa = PBXBuildFile; fileRef = A3; };
+
+// TARGET
+    T1 = { isa = PBXNativeTarget; buildConfigurationList = BC_LIST; buildPhases = (S1,); name = "Severance"; productName = "Severance"; productType = "com.apple.product-type.application"; };
+
+// BUILD CONFIG
+    BC = { isa = XCBuildConfiguration; name = Release; buildSettings = { PRODUCT_BUNDLE_IDENTIFIER = "com.kevin.Severance"; INFOPLIST_FILE = "Info.plist"; IPHONEOS_DEPLOYMENT_TARGET = "15.0"; SWIFT_VERSION = "5.0"; }; };
+
+// CONFIG LIST
+    BC_LIST = { isa = XCConfigurationList; buildConfigurations = (BC,); defaultConfigurationName = Release; };
+
   };
-  rootObject = 1C5B5D5D1D9F6B8D00E6A5B1;
+  rootObject = MAIN;
 }

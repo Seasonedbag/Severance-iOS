@@ -15,11 +15,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        if let filePath = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "www") {
+        if let filePath = Bundle.main.path(forResource: "index_pwa", ofType: "html", inDirectory: "www") {
             let fileURL = URL(fileURLWithPath: filePath)
             webView.loadFileURL(fileURL, allowingReadAccessTo: fileURL.deletingLastPathComponent())
         } else {
-            webView.loadHTMLString("<html><body><h2>Severance missing index.html</h2></body></html>", baseURL: nil)
+            webView.loadHTMLString("<html><body><h2>index missing</h2></body></html>", baseURL: nil)
         }
     }
 }
