@@ -1,19 +1,17 @@
-Severance v5 iOS Project - Build Instructions
 
-This package contains the web app in `www/` and iOS wrapper sources. To produce a signed .ipa you have two options:
+Severance iOS Xcode Project (v5 Full)
+------------------------------------
 
-A) Build locally on a Mac with Xcode
-   1. Create a new Xcode iOS App project (App template).
-   2. Replace AppDelegate.swift, SceneDelegate.swift, ViewController.swift and Info.plist with the files in this package.
-   3. Drag the `www` folder into your project (Copy items if needed).
-   4. Add Assets.xcassets/AppIcon.appiconset to the project's asset catalog.
-   5. Set Bundle Identifier to com.kevin.Severance, set signing Team.
-   6. Build & Run on device or Archive -> Export .ipa
+This package contains a generated Xcode project and the `www/` web app folder.
 
-B) Use GitHub Actions / macos runner (free)
-   1. Create a GitHub repo and push this package.
-   2. Create an Xcode project locally (on a Mac) and commit the .xcodeproj into the repo (this workflow currently expects a .xcodeproj).
-   3. Trigger the workflow (Actions -> Build iOS IPA) and download the artifact.
-   4. Install the resulting .ipa using AltStore on your iPhone.
+To build:
+1. Unzip into a folder.
+2. Open `Severance.xcodeproj` in Xcode on a Mac.
+3. Ensure Signing & Capabilities has your Apple ID team selected.
+4. Build -> Archive -> Export iOS App (.ipa) or run on device.
 
-If you want me to attempt generating a full .xcodeproj automatically, reply 'generate xcodeproj' and I'll try. Note: generated xcodeproj may need small tweaks in Xcode.
+To use with GitHub Actions:
+- Commit the entire project contents to the root of your repo.
+- The workflow should run xcodebuild against the .xcodeproj.
+
+Bundle ID: com.kevin.Severance

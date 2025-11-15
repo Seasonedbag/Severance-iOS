@@ -19,7 +19,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
             let fileURL = URL(fileURLWithPath: filePath)
             webView.loadFileURL(fileURL, allowingReadAccessTo: fileURL.deletingLastPathComponent())
         } else {
-            let html = "<html><body><h2>Severance app missing</h2><p>index.html not found in www/</p></body></html>"
+            let html = "<html><body><h2>Severance app missing</h2><p>index.html not found.</p></body></html>"
             webView.loadHTMLString(html, baseURL: nil)
         }
     }

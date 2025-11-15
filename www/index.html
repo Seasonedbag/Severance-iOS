@@ -2,41 +2,45 @@
 :root[data-theme="dark"]{--bg:#0b1220;--card:#07121a;--muted:#9fb3c8;--accent:#4ea1ff;--gold:#c5890f;--text:#e6eef9}
 :root[data-theme="light"]{--bg:#f4f6fb;--card:#fff;--muted:#6b7280;--accent:#0f62fe;--gold:#c5890f;--text:#0b1220}
 html,body{height:100%;margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,system-ui,Segoe UI,Roboto,Arial}
-.wrap{max-width:480px;margin:0 auto;padding:14px;padding-bottom:calc(env(safe-area-inset-bottom)+20px);box-sizing:border-box}
+.wrap{max-width:480px;margin:0 auto;padding:14px;padding-bottom:calc(env(safe-area-inset-bottom)+20px)}
 .header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .logo{width:56px;height:56px;border-radius:12px;overflow:hidden}
 .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:12px;margin-bottom:12px}
 .row{display:flex;gap:8px;align-items:center}
 .row> *{flex:1 1 auto;min-width:0}
-input,select,button{font-size:15px;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:transparent;color:var(--text);box-sizing:border-box;min-width:0}
+input,select,button{font-size:15px;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--text);box-sizing:border-box;min-width:0;touch-action:manipulation}
 .btn{background:var(--accent);color:#fff;border:0;padding:10px 12px;border-radius:10px;cursor:pointer}
 .add{background:var(--gold);color:#fff;border:0;padding:10px 12px;border-radius:10px;cursor:pointer}
 .small{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text);padding:8px 10px;border-radius:8px;cursor:pointer}
 .muted{color:rgba(255,255,255,0.35);font-size:13px}
-.item-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:58%;display:inline-block;vertical-align:middle}
+.item-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60%;display:inline-block;vertical-align:middle}
 .right-controls{display:flex;justify-content:flex-end;gap:6px;align-items:center;flex-shrink:0;max-width:40%;overflow:hidden}
 .footer{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
-</style><meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-</head><body><div class="wrap">
-  <div class="header"><div class="logo"><img src="icon-192.png" style="width:100%;height:100%;object-fit:cover"></div><div style="flex:1"><div style="font-weight:700">Severance</div><div class="muted" style="font-size:13px">Offline finance — tap Add to Home Screen to install</div></div><div style="display:flex;flex-direction:column;gap:6px"><button id="themeBtn" class="small">Theme</button><button id="installBtn" class="small" style="display:none">Install</button></div></div>
+</style></head><body><div class="wrap">
+  <div class="header"><div class="logo"><img src="icon-192.png" style="width:100%;height:100%;object-fit:cover"></div><div style="flex:1"><div style="font-weight:700">Severance</div><div class="muted" style="font-size:13px">Offline finance — tap Open in Safari → Share → Add to Home Screen (serve once to install PWA)</div></div><div style="display:flex;flex-direction:column;gap:6px"><button id="themeBtn" class="small">Theme</button><button id="installBtn" class="small" style="display:none">Install</button></div></div>
   <div class="card" id="dashboard"><div class="row"><div><div class="muted">Monthly Income</div><div id="dashIncome" style="font-weight:700">$0.00</div></div><div><div class="muted">Spendable</div><div id="dashSpend" style="font-weight:700">$0.00</div></div><div><div class="muted">Monthly Invest</div><div id="dashInv" style="font-weight:700">$0.00</div></div></div></div>
   <div class="card"><h3 style="margin:0 0 8px 0">Income</h3><div id="incomeList" class="muted">No income sources yet</div><div class="row" style="margin-top:8px"><select id="incType"><option value="salary">Salary</option><option value="hourly">Hourly</option><option value="perpay">Per-pay</option></select><input id="incName" placeholder="Source (Job 1)"></div><div class="row" style="margin-top:8px"><input id="incGross" type="number" placeholder="Gross amount or rate"><select id="incFreq"><option value="annual">Annual</option><option value="monthly">Monthly</option><option value="weekly">Weekly</option><option value="biweekly">Bi-weekly</option><option value="semimonthly">Semi-monthly</option></select><input id="incHours" type="number" placeholder="Hours" style="display:none;width:88px"><button id="addInc" class="add">Add</button></div><div class="row" style="margin-top:8px"><select id="province"><option value="custom">Province/Custom</option><option value="ON">Ontario</option><option value="BC">BC</option><option value="AB">Alberta</option></select><button id="calcIncome" class="btn">Calculate</button><button id="previewPay" class="small">Preview</button></div><div id="incSummary" class="muted" style="margin-top:8px"></div></div>
   <div class="card"><h3 style="margin:0 0 8px 0">Budget — Fixed & Variable</h3><div id="fixedList" class="muted">No fixed expenses</div><div class="row" style="margin-top:8px"><input id="fixedName" placeholder="Name (rent)"><input id="fixedAmt" type="number" placeholder="Amount"><select id="fixedFreq"><option value="monthly">Monthly</option><option value="weekly">Weekly</option><option value="biweekly">Bi-weekly</option></select><button id="addFixed" class="add">Add</button></div><hr style="border:0;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0"><div id="varList" class="muted">No variable expenses</div><div class="row" style="margin-top:8px"><input id="varName" placeholder="Groceries"><input id="varAmt" type="number" placeholder="Amount"><select id="varFreq"><option value="monthly">Monthly</option><option value="weekly">Weekly</option><option value="biweekly">Bi-weekly</option></select><button id="addVar" class="add">Add</button></div><div class="row" style="margin-top:10px"><button id="calcBudget" class="btn">Calculate Budget</button><button id="saveBtn" class="small">Save</button><button id="loadBtn" class="small">Load</button></div><div id="budgetSummary" style="margin-top:8px"></div></div>
   <div class="card"><h3 style="margin:0 0 8px 0">Investments</h3><div id="investList" class="muted">No investments</div><div class="row" style="margin-top:8px"><input id="invName" placeholder="TFSA / ETF"><input id="invAmt" type="number" placeholder="Amount"><select id="invFreq"><option value="monthly">Monthly</option><option value="weekly">Weekly</option><option value="biweekly">Bi-weekly</option></select><button id="addInv" class="add">Add</button></div><div class="row" style="margin-top:8px"><input id="projRate" type="number" placeholder="Annual % (6)" value="6"><input id="projYears" type="number" placeholder="Years (20)" value="20"><button id="runFixed" class="btn">Fixed</button><button id="runMC" class="small">Monte Carlo</button></div><canvas id="projCanvas" class="canvas"></canvas><div id="projLegend" class="legend"></div></div>
-  <div class="footer">Add to Home Screen to install. Works offline after install.</div></div>
+  <div class="footer">Open in Safari → Share → Add to Home Screen (serve once to install PWA). Works offline after install.</div></div>
 <script>
 (function(){
-    try{
-      var stored = localStorage.getItem('severance_theme');
-      var prefers = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-      var theme = stored || (prefers ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-      window.__severance_initial_theme = theme;
-      var btn = document.getElementById('themeBtn');
-      if(btn) btn.textContent = theme==='dark'?'Light':'Dark';
-    }catch(e){console.warn(e);}
-  }());
+  function $(id){return document.getElementById(id);}
+  function fmt(n){return '$'+Number(n||0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function toMonthly(a,f){a=Number(a)||0; if(f==='monthly') return a; if(f==='weekly') return a*4.3333333; if(f==='biweekly') return a*26/12; if(f==='annual') return a/12; return a;}
+  var state = {
+    income: JSON.parse(localStorage.getItem('fin_income')||'[]'),
+    fixed: JSON.parse(localStorage.getItem('fin_fixed')||'[]'),
+    variable: JSON.parse(localStorage.getItem('fin_variable')||'[]'),
+    invest: JSON.parse(localStorage.getItem('fin_invest')||'[]'),
+    history: JSON.parse(localStorage.getItem('fin_history')||'[]'),
+    theme: localStorage.getItem('severance_theme')||null
+  };
+  function saveState(){ try{ localStorage.setItem('fin_income', JSON.stringify(state.income)); localStorage.setItem('fin_fixed', JSON.stringify(state.fixed)); localStorage.setItem('fin_variable', JSON.stringify(state.variable)); localStorage.setItem('fin_invest', JSON.stringify(state.invest)); localStorage.setItem('fin_history', JSON.stringify(state.history)); if(state.theme) localStorage.setItem('severance_theme', state.theme);}catch(e){console.warn('save',e);} }
+  function autoSave(){ saveState(); }
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];}); }
+  // theme init: use stored theme or prefers-color-scheme
+  (function(){ var stored = localStorage.getItem('severance_theme'); var prefers = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches); var theme = stored || (prefers ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', theme); state.theme = theme; $('themeBtn').textContent = theme==='dark'?'Light':'Dark'; }());
   function renderIncome(){ var el=$('incomeList'); el.innerHTML=''; if(!state.income||state.income.length===0){el.textContent='No income sources yet';return;} for(var i=0;i<state.income.length;i++){var s=state.income[i]; var div=document.createElement('div'); div.style.marginTop='6px'; div.innerHTML = '<span class="item-name"><strong>'+escapeHtml(s.name)+'</strong></span> <span class="muted" style="margin-left:6px">'+escapeHtml(s.type)+' • '+escapeHtml(s.freq)+' • Tax:'+ (s.tax||0) +'%</span><div class="right-controls">'+fmt(computeMonthly(s))+' <button class="small" onclick="delIncome('+i+')">Del</button></div>'; el.appendChild(div);} }
   function renderFixed(){ var el=$('fixedList'); el.innerHTML=''; if(!state.fixed||state.fixed.length===0){el.textContent='No fixed expenses';return;} for(var i=0;i<state.fixed.length;i++){var f=state.fixed[i]; var div=document.createElement('div'); div.style.marginTop='6px'; div.innerHTML = '<span class="item-name">'+escapeHtml(f.name)+'</span><div class="right-controls">'+fmt(toMonthly(f.amount,f.freq))+' <button class="small" onclick="delFixed('+i+')">Del</button></div>'; el.appendChild(div);} }
   function renderVar(){ var el=$('varList'); el.innerHTML=''; if(!state.variable||state.variable.length===0){el.textContent='No variable expenses';return;} for(var i=0;i<state.variable.length;i++){var v=state.variable[i]; var div=document.createElement('div'); div.style.marginTop='6px'; div.innerHTML = '<span class="item-name">'+escapeHtml(v.name)+'</span><div class="right-controls">'+fmt(toMonthly(v.amount,v.freq))+' <button class="small" onclick="delVar('+i+')">Del</button></div>'; el.appendChild(div);} }
@@ -79,7 +83,7 @@ input,select,button{font-size:15px;padding:10px;border-radius:10px;border:1px so
   window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferredPrompt = e; $('installBtn').style.display = 'inline-block'; $('installBtn').onclick = function(){ deferredPrompt.prompt(); deferredPrompt.userChoice.then(function(choice){ console.log('choice', choice); }); }; });
   // register SW when on http(s)
   if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){
-    console.log('service worker omitted in v5 build').then(function(reg){ console.log('sw registered', reg); }).catch(function(e){ console.warn('sw failed', e); });
+    console.log('file mode: no sw');
   }
   function renderAll(){ renderIncome(); renderFixed(); renderVar(); renderInvest(); renderHistory(); calcAll(); }
   setTimeout(function(){ renderAll(); }, 50);
